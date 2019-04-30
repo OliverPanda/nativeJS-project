@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./deepCopy.js"></script>
+  <script>
+    console.log(deepCopy)
+    var state = [
+      { a: 1 },
+      { a: 2 }
+    ]
+    var shallow = state
+    shallow[1].a = 11111
+    console.log('浅复制的结果state', state[1].a)
+    console.log('浅复制的结果shallow', shallow[1].a)
+    
+    var state2 = [
+      { a: 1 },
+      { a: 2 }
+    ]
+    var deep = deepCopy(state2)
+    deep[1].a = 22222222222
+    console.log('深复制的结果state2', state2[1].a)
+    console.log('深复制的结果deep', deep[1].a)
+  </script>
+</body>
+</html>

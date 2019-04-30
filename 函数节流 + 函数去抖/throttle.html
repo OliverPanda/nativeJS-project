@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./throttle.js"></script>
+  <script>
+    window.onresize = throttle(function () {
+      console.log('不能一直触发Onsize, 操作间隔小于300ms的都不执行，操作间隔大于300ms才执行')
+      console.log(new Date().getTime())
+    }, 300)
+  </script>
+</body>
+</html>

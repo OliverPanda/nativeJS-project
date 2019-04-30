@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    (function IIFE (def) {
+      console.log('先执行IIFE')
+      def(window)
+    })(function def (global) {
+      console.log('后执行def')
+    })
+  </script>
+</body>
+</html>

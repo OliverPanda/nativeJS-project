@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Publisher () {
+        this.subscribers = []
+        this.addSubscriber = function (subscriber) {
+            var isExit = this.subscribers.some(item => item == subscriber)
+            if (!isExit) {
+                this.subscribers.push(subscriber)
+            }
+            return this
+        }
+        this.deliver = function (data) {
+            this.subscribers.forEach(function (fn) {
+                fn(data)   
+            })
+            return this
+        }
+    }
+    
+    // 订阅者(vue中的父组件)
+    let a = function (data) {
+      console.log(`订阅者a收到订阅信息:${data}`)
+    }
+    let b = function (data) {
+      console.log(`订阅者b: ${data}`)
+    }
+    // (vue子组件)
+    let publish = new Publisher()
+    // 添加订阅者
+    publish.addSubscriber(a).addSubscriber(b)
+    // 发布消息 (vue $emit)
+    publish.deliver('这是发布者发布的消息')
+  </script>
+</body>
+</html>
