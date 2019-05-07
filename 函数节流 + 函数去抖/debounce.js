@@ -1,4 +1,4 @@
-function throttle (fn, wait) {
+function debounce (fn, wait) {
   var first = true
   var timer = null
   var that = this

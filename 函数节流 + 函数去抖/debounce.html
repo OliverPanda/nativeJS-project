@@ -9,8 +9,7 @@
 <body>
   <script src="./debounce.js"></script>
   <script>
-    console.log(throttle)
-    window.onresize = throttle(function () {
+    window.onresize = debounce(function () {
       console.log('window resize之后的回调操作, 每300ms最多执行一次回调操作')
     }, 300)
   </script>
