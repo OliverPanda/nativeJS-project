@@ -85,7 +85,7 @@ class MyPromise {
     const { _value, _status } = this
     return new MyPromise((onFulfilledNext, onRejectedNext) => {
       // 执行成功函数封装 --- S ---
-      let onFulfilledNext = value => {
+      let fulfilled = value => {
         try {
           if (!isFunc(onFulfilledNext)) {
             onFulfilledNext(value) 
@@ -192,5 +192,3 @@ class MyPromise {
     )
   }
 }
-
-
