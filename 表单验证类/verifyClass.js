@@ -31,3 +31,10 @@ function Verify () {
   // 只能是字母
   _self.checkOnlyCharacter = _check(/^[a-zA-Z]*$/)
 }
+
+/*
+  使用：如果在Node环境下(vue, react), 可以先module.exports = new Verify(), 再import进自己的页面中
+  if (!verifyClass.checkPhone(this.form.phone)) {
+    Toast('请输入正确的手机号码！')
+  }
+*/

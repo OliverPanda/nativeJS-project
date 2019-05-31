@@ -3,7 +3,7 @@
  * 从promise使用入手, new Promise((resolve, reject) => {}), Promise是一个带回调函数的类，回调函数接受两个参数resolve, reject
  * resolve, reject到底是什么？ 什么类型的参数 --  用法： resolve(data), 所以resolve, reject都是函数
  * then方法： 返回一个promise对象, 能运行then里的回调说明上一个Promise状态为resolved
- * 参考: https://juejin.im/post/5b83cb5ae51d4538cc3ec354, https://github.com/xieranmaya/blog/issues/3
+ * 参考: https://juejin.im/post/5b83cb5ae51d4538cc3ec354, https://github.com/xieranmaya/blog/issues/3, https://juejin.im/post/5a30193051882503dc53af3c
  */
 const isFunc = variable => typeof variable === 'function'
 
