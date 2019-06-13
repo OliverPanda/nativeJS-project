@@ -1,5 +1,5 @@
 function limitCharByte (str, limitByte) {
-  if (typeof str !== 'string') {
+  if (str && typeof str !== 'string') {
     throw new Error('str must be a string')
   }
   var byteLen = 0
