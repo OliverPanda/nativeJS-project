@@ -1,3 +1,3 @@
 function Arraylike2Array (target) {
-  return [].slice.call(arguments)
+  return [].slice.call(target)
 }
