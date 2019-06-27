@@ -2,7 +2,7 @@ function createCurry (fn, args) {
   var args = args || []
   var that = this
   return function () {
-    var _args = [].slice.apply(arguments);
+    var _args = [].slice.apply(arguments); // 获得剩下的参数
     [].push.apply(_args, args);
     if (_args.length < fn.length) {
       return createCurry.call(that, fn, _args)
@@ -17,6 +17,6 @@ const currying = (fn, ...args) => {
     return fn(...args)
   }
   return function (...args2) {
-    return combo(fn, ...args, ...args2)
+    return currying(fn, ...args, ...args2)
   }
 }
