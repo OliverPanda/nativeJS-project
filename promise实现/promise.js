@@ -53,7 +53,7 @@ class MyPromise {
       if (val instanceof MyPromise) {
         val.then(value => {
           this._value = value
-          this._status = fulfillED
+          this._status = FULFILLED
           runfulfilled(value)
         }, err => {
           this._value = err
@@ -103,7 +103,6 @@ class MyPromise {
           onRejectedNext(err)
         }
       }
-      // 执行成功函数封装 --- E ---
       // 执行失败函数封装 --- S ---
       let rejected = error => {
         try {
@@ -124,7 +123,6 @@ class MyPromise {
           onRejectedNext(err)
         }
       }
-      // 执行失败函数封装 --- E ---      
       switch (_status) {
         // 当状态为pending时，将then方法回调函数加入执行队列等待执行
         case PENDING:
