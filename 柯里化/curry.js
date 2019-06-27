@@ -12,8 +12,7 @@ function createCurry (fn, args) {
 }
 
 // es6 currying
-const combo = (fn, ...args) => {
-  // TODO: 请在此处完善代码
+const currying = (fn, ...args) => {
   if (args.length >= fn.length) {
     return fn(...args)
   }
