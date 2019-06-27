@@ -62,7 +62,7 @@ class MyPromise {
         })
       }
     }
-    setTimeout(run, 0) // 支持同步的Promise -- ? 没懂
+    setTimeout(run, 0) // 支持同步的Promise
   }
   
   _reject (err) {
