@@ -4,6 +4,7 @@
  * resolve, reject到底是什么？ 什么类型的参数 --  用法： resolve(data), 所以resolve, reject都是函数
  * then方法： 返回一个promise对象, 能运行then里的回调说明上一个Promise状态为resolved
  * 参考: https://juejin.im/post/5b83cb5ae51d4538cc3ec354, https://github.com/xieranmaya/blog/issues/3, https://juejin.im/post/5a30193051882503dc53af3c
+ * 可优化点: 1. resolve, reject中部分代码功能应该可以抽象一下 2. then方法里写的有点乱 
  */
 const isFunc = variable => typeof variable === 'function'
 
