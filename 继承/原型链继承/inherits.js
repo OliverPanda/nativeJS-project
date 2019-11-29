@@ -7,7 +7,7 @@ export default function inherits (child, father) {
       throw new Error('子类和父类都必须是function')
     }
   })
-  var F = null
+  var F = function () {}
   F.prototype = father.prototype
   child.prototype = new F()
   child.prototype.constructor = child
